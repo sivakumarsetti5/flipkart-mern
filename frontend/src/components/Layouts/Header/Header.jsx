@@ -30,7 +30,6 @@ const Header = () => {
           <Link className="h-7 mr-1 sm:mr-4" to="/">
             <img draggable="false" className="h-full w-full object-contain" src={logo} alt="Flipkart Logo" />
           </Link>
-
           <Searchbar />
         </div>
         {/* <!-- logo & search container --> */}

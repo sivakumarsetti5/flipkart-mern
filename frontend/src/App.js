@@ -38,7 +38,6 @@ import Wishlist from './components/Wishlist/Wishlist';
 import NotFound from './components/NotFound';
 
 function App() {
-
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   // const [stripeApiKey, setStripeApiKey] = useState("");
@@ -48,13 +47,13 @@ function App() {
   //   setStripeApiKey(data.stripeApiKey);
   // }
 
-  useEffect(() => {
+  useEffect(()=>{
     WebFont.load({
-      google: {
-        families: ["Roboto:300,400,500,600,700"]
-      },
-    });
-  });
+      google:{
+        families:["Roboto:300,400,500,600,700"]
+      }
+    })
+  })
 
   useEffect(() => {
     dispatch(loadUser());
@@ -73,9 +72,8 @@ function App() {
   // disable right click
   window.addEventListener("contextmenu", (e) => e.preventDefault());
   window.addEventListener("keydown", (e) => {
-    if (e.keyCode == 123) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
+    if (e.key === "F12") e.preventDefault();
+    if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) e.preventDefault();
   });
   
   return (
